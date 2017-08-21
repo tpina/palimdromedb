@@ -35,8 +35,12 @@ function handleIsPalindromeRequest(req, res) {
   );
   let toEvaluate = req.body.toEvaluate;
   let result = Utils.isPalindrome(toEvaluate);
+
   if (result.palindrome && !existingPalindromes.has(result.stripped))
     existingPalindromes = Utils.storePalindrome(existingPalindromes, result);
+
+  if (result.palindrome)
+    existingPalindromes.get(result.stripped).timestamp = result.timestamp;
   res.send({ isPalindrome: result });
 }
 

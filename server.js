@@ -36,9 +36,7 @@ function start() {
   var port = process.env.PORT || 3000;
   app.listen(port);
   log(
-    'Express server listening on port %d in %s mode',
-    port,
-    app.settings.env
+    `Express server listening on port ${port} in ${app.settings.env ? app.settings.env : 'development'} mode`
   );
 }
 

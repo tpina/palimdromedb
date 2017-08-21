@@ -1,3 +1,5 @@
+var winston = require('winston');
+
 exports.mapToObj = function (strMap) {
   let obj = Object.create(null);
   for (let [k, v] of strMap) {
@@ -35,6 +37,11 @@ exports.storePalindrome = function (store, palindromeObj) {
     elementsInStore.sort(function (element1, element2) {
       return element1 - element2;
     });
+    winston.log(
+      'info',
+      'DELETING ENTY:: ' +
+      elementsInStore[0].stripped
+    );
     newStore.delete(elementsInStore[0].stripped);
     newStore.set(palindromeObj.stripped, palindromeObj);
   }

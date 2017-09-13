@@ -78,7 +78,7 @@ The server always replies with a json object of this format:
 
 **Improvments**
 
-Due to time constraints some features were not implemented.
+Some features were not implemented.
 
 - Improved test coverage. Only created the basic scenarios but did not have time to implement the tests for business logic (`utils.js` file).
 - If you don't send the post request in the right format you will see the default error page with the stack trace. A nicer error handling solution should be implemented.

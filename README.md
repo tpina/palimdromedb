@@ -9,7 +9,7 @@ An example could be 'Dammit I'm Mad'.
 The service has a simple REST interface that presents two endpoints:
 
 - An endpoint that accepts a string parameter, that will return true if the string is palindrome (and false otherwise) 
-- An endpoint that returns a list of the last 10 palindromes the system has received in the last 10 minutes (there is no need to persist the palindromes, it is OK to keep them in memory)
+- An endpoint that returns a list of the last 10 palindromes the system has received in the last 10 minutes
 
 ## How to
 
@@ -75,6 +75,7 @@ The server always replies with a json object of this format:
 - If a string is not a palindrome it will *not* be stored and therefore won't appear in the `GET http://localhost:3000/api/palindromes` request.
 - I'm writing server logs to the console and to log files under a `./log` folder.
 - If you request for a palindrome already in the system, its timestamp gets updated.
+- As a PoC there is no need to persist the palindromes, it is OK to keep them in memory
 
 **Improvments**
 
